@@ -2,7 +2,6 @@ const express = require('express');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 6489;
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -48,6 +47,6 @@ app.get('/remedios/search', (req, res) => {
     });
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 6489, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
